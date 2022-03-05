@@ -5,9 +5,12 @@ class Index extends React.Component{
         const {tweets} = this.props;
         return(
             <div>
+                <nav>
+                    <a href='/new'>Create a tweet</a>
+                </nav>
                 {
                     tweets.map((tweet) => (
-                        <p>{tweet.content}</p>
+                        <a href={`/home/${tweet._id}`}>{tweet.content}<br/></a>
                     ))
                 }
             </div>
