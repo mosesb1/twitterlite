@@ -5,7 +5,9 @@ const db = mongoose.connection;
 
 db.on('open', () => {
     const startTweets = [
-        {content: 'hello world'}
+        {content: 'hello world'},
+        {content: 'bro, i am straight up not having a good time'},
+        {content: 'u bum'}
     ];
 
     Tweet.deleteMany({})
