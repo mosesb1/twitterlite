@@ -13,6 +13,7 @@ class Index extends React.Component{
                         <a href={`/home/${tweet._id}`}>{tweet.content}<br/></a>
                     ))
                 }
+
             </div>
         )
     }
