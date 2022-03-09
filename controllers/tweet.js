@@ -99,7 +99,7 @@ router.get('/:id/edit', (req,res) => {
 router.get('/:id', (req,res) => {
     Tweet.findById(req.params.id)
         .then((foundTweet) => {
-            res.render('tweets/Show', {tweet: foundTweet});
+            res.render('tweets/Show', {tweet: foundTweet, username: req.session.username});
         })
         .catch((error) => {
             console.log(error);
