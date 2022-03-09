@@ -22,7 +22,16 @@ router.get('/', (req,res) => {
             res.render('tweets/Index', {tweets: foundTweets});
         })
         .catch((error) => {
-            res.status(400).json({error});
+            res.json({error});
+        })
+})
+router.get('/mytweets', (req,res) => {
+    Tweet.find({username: req.session.username})
+        .then((foundTweets) => {
+            res.render('tweets/Index', {tweets: foundTweets});
+        })
+        .catch((error) => {
+            res.json({error});
         })
 })
 
@@ -37,11 +46,11 @@ router.get('/new', (req,res) => {
 router.delete('/:id', (req,res) => {
     Tweet.findByIdAndRemove(req.params.id)
         .then((deletedTweet) => {
-            res.redirect('/tweets');
+            res.redirect('/tweets/mytweets');
         })
         .catch((error) => {
             console.log(error);
-            res.status(400).json({error})
+            res.json({error})
         })
 })
 
@@ -54,20 +63,21 @@ router.put('/:id', (req,res) => {
         })
         .catch((error) => {
             console.log(error);
-            res.status(400).json({error});
+            res.json({error});
         })
 })
 
 // create
 
 router.post('/', (req,res) => {
+    req.body.username = req.session.username;
     Tweet.create(req.body)
         .then((tweets) => {
-            res.redirect('/tweets');
+            res.redirect('/tweets/mytweets');
         })
         .catch((error) => {
             console.log(error);
-            res.status(400).json({error});
+            res.json({error});
         })
 })
 
@@ -80,7 +90,7 @@ router.get('/:id/edit', (req,res) => {
         })
         .catch((error) => {
             console.log(error);
-            res.status(400).json({error});
+            res.json({error});
         })
 })
 
@@ -93,7 +103,7 @@ router.get('/:id', (req,res) => {
         })
         .catch((error) => {
             console.log(error);
-            res.status(400).json({error});
+            res.json({error});
         })
 })
 
