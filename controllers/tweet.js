@@ -1,17 +1,25 @@
 const express = require('express');
-const { append } = require('express/lib/response');
 const Tweet = require('../models/tweet');
 
 
 const router = express.Router();
 
+router.use((req,res,next) => {
+    if(req.session.loggedIn) {
+        next();
+    } else {
+        res.redirect("/user/login");
+    }
+})
+
 // Routes // 
 
 // index //
-router.get('/home', (req,res) => {
+
+router.get('/', (req,res) => {
     Tweet.find({})
         .then((foundTweets) => {
-            res.render('Index', {tweets: foundTweets});
+            res.render('tweets/Index', {tweets: foundTweets});
         })
         .catch((error) => {
             res.status(400).json({error});
@@ -21,45 +29,45 @@ router.get('/home', (req,res) => {
 // new //
 
 router.get('/new', (req,res) => {
-    res.render('New');
+    res.render('tweets/New');
 })
 
 // delete
 
-router.delete('/home/:id', (req,res) => {
+router.delete('/:id', (req,res) => {
     Tweet.findByIdAndRemove(req.params.id)
         .then((deletedTweet) => {
-            res.redirect('/home');
+            res.redirect('/tweets');
         })
         .catch((error) => {
             console.log(error);
-            res.json({error})
+            res.status(400).json({error})
         })
 })
 
 // update
 
-router.put('/home/:id', (req,res) => {
+router.put('/:id', (req,res) => {
     Tweet.findByIdAndUpdate(req.params.id, req.body)
         .then((updatedFruit) => {
-            res.redirect(`/home/${req.params.id}`)
+            res.redirect(`/tweets/${req.params.id}`)
         })
         .catch((error) => {
             console.log(error);
-            res.json({error});
+            res.status(400).json({error});
         })
 })
 
 // create
 
-router.post('/home', (req,res) => {
+router.post('/', (req,res) => {
     Tweet.create(req.body)
         .then((tweets) => {
-            res.redirect('/home');
+            res.redirect('/tweets');
         })
         .catch((error) => {
             console.log(error);
-            res.json({error});
+            res.status(400).json({error});
         })
 })
 
@@ -68,24 +76,24 @@ router.post('/home', (req,res) => {
 router.get('/:id/edit', (req,res) => {
     Tweet.findById(req.params.id)
         .then((foundTweet)=>{
-            res.render('Edit', {tweet: foundTweet});
+            res.render('tweets/Edit', {tweet: foundTweet});
         })
         .catch((error) => {
             console.log(error);
-            res.json({error});
+            res.status(400).json({error});
         })
 })
 
 // show
 
-router.get('/home/:id', (req,res) => {
+router.get('/:id', (req,res) => {
     Tweet.findById(req.params.id)
         .then((foundTweet) => {
-            res.render('Show', {tweet: foundTweet});
+            res.render('tweets/Show', {tweet: foundTweet});
         })
         .catch((error) => {
             console.log(error);
-            res.json({error});
+            res.status(400).json({error});
         })
 })
 

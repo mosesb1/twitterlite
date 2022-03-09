@@ -6,7 +6,7 @@ class Show extends React.Component{
         return(
             <div>
                 <p>{tweet.content}</p>
-                <a href={`/${tweet._id}/edit`}>Edit tweet</a>
+                <a href={`/tweets/${tweet._id}/edit`}>Edit tweet</a>
                 <form action={`${tweet._id}?_method=DELETE`} method="POST">
                     <input type='submit' value='Delete Tweet'/>
                 </form>
