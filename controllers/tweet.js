@@ -19,7 +19,7 @@ router.use((req,res,next) => {
 router.get('/', (req,res) => {
     Tweet.find({})
         .then((foundTweets) => {
-            res.render('tweets/Index', {tweets: foundTweets});
+            res.render('tweets/Index', {tweets: foundTweets, username: req.session.username});
         })
         .catch((error) => {
             res.json({error});
@@ -28,10 +28,31 @@ router.get('/', (req,res) => {
 router.get('/mytweets', (req,res) => {
     Tweet.find({username: req.session.username})
         .then((foundTweets) => {
-            res.render('tweets/Index', {tweets: foundTweets});
+            res.render('tweets/Index', {tweets: foundTweets, username: req.session.username});
         })
         .catch((error) => {
             res.json({error});
+        })
+})
+
+router.get('/home', (req,res) => {
+    Tweet.find({})
+        .then((foundTweets) => {
+            res.render('tweets/Index', {tweets: foundTweets, username: req.session.username});
+        })
+        .catch((error) => {
+            res.json({error});
+        })
+})
+
+router.get('/liked', (req,res) => {
+    Tweet.find({likes: req.session.username})
+        .then((foundTweets) => {
+            res.render('tweets/Index', {tweets: foundTweets, username: req.session.username})
+        })
+        .catch((error) => {
+            console.log(error)
+            res.json({error})
         })
 })
 
