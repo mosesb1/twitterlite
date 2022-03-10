@@ -1,5 +1,6 @@
 const express = require('express');
 const Tweet = require('../models/tweet');
+const User = require('../models/user');
 
 
 const router = express.Router();
@@ -36,12 +37,20 @@ router.get('/mytweets', (req,res) => {
 })
 
 router.get('/home', (req,res) => {
-    Tweet.find({})
-        .then((foundTweets) => {
-            res.render('tweets/Index', {tweets: foundTweets, username: req.session.username});
+    User.findOne({username: req.session.username})
+        .then((foundUser) => {
+            Tweet.find({username: foundUser.following})
+                .then((foundTweets) => {
+                    res.render('tweets/Index', {tweets: foundTweets, username: req.session.username})
+                })
+                .catch((error) => {
+                    console.log(error)
+                    res.json({error})
+                })
         })
         .catch((error) => {
-            res.json({error});
+            console.log(error)
+            res.json({error})
         })
 })
 
