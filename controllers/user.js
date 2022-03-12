@@ -39,7 +39,7 @@ router.post("/login", (req,res) => {
                     req.session.username = username;
                     req.session.loggedIn = true;
 
-                    res.redirect('/tweets');
+                    res.redirect('/tweets/home');
                 } else {
                     res.json({error: "password doesn't match"});
                 }

@@ -5,6 +5,10 @@ const {Schema, model} = mongoose;
 const tweetsSchema = new Schema({
     content: String,
     username: String,
+    img: {
+        type: String,
+        required: false
+    },
     likes: [
         {
             type: String,

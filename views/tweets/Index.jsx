@@ -1,8 +1,5 @@
 const React = require('react');
 const Default = require('../layouts/Default');
-const Tweet = require('../../models/tweet');
-const res = require('express/lib/response');
-
 class Index extends React.Component{
     render(){
         const {tweets, username} = this.props;

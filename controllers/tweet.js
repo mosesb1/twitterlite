@@ -2,7 +2,6 @@ const express = require('express');
 const Tweet = require('../models/tweet');
 const User = require('../models/user');
 
-
 const router = express.Router();
 
 router.use((req,res,next) => {
@@ -101,6 +100,7 @@ router.put('/:id', (req,res) => {
 
 router.post('/', (req,res) => {
     req.body.username = req.session.username;
+    console.log(req.body);
     Tweet.create(req.body)
         .then((tweets) => {
             res.redirect('/tweets/mytweets');

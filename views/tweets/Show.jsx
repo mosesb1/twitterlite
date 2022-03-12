@@ -9,6 +9,7 @@ class Show extends React.Component{
                 <div>
                     {tweet.username === username ? <div>
                     <p>{tweet.content}</p>
+                    <img src={tweet.img}/><br/>
                     <a href={`/tweets/${tweet._id}/edit`}>Edit tweet</a>
                     <form action={`${tweet._id}?_method=DELETE`} method="POST">
                         <input type='submit' value='Delete Tweet'/>

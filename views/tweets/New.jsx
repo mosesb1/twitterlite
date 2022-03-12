@@ -7,6 +7,7 @@ class New extends React.Component{
             <Default>
                 <form action='/tweets' method="POST">
                     <textarea name='content' placeholder="What's happening?"/><br/>
+                    <input type='text' name='img' placeholder='Image URL'/><br/>
                     <input type='submit' value='Tweet'/>
                 </form>
             </Default>
