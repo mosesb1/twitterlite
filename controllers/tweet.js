@@ -12,6 +12,8 @@ router.use((req,res,next) => {
     }
 })
 
+router.use(express.static('public'));
+
 // Routes // 
 
 // index //
@@ -56,11 +58,22 @@ router.get('/home', (req,res) => {
 router.get('/liked', (req,res) => {
     Tweet.find({likes: req.session.username})
         .then((foundTweets) => {
-            res.render('tweets/Index', {tweets: foundTweets, username: req.session.username})
+            res.render('tweets/Index', {tweets: foundTweets, username: req.session.username});
         })
         .catch((error) => {
-            console.log(error)
-            res.json({error})
+            console.log(error);
+            res.json({error});
+        })
+})
+
+router.get('/user/:user', (req,res) => {
+    Tweet.find({username: req.params.user})
+        .then((foundTweets) => {
+            res.render('tweets/Index', {tweets: foundTweets, username: req.session.username});
+        })
+        .catch((error) => {
+            console.log(error);
+            res.json({error});
         })
 })
 

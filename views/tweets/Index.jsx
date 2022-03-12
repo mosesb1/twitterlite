@@ -11,7 +11,13 @@ class Index extends React.Component{
                     </nav>
                     {
                         tweets.map((tweet) => (
-                            <a href={`/tweets/${tweet._id}`}>{tweet.content}<br/></a>
+                            <div>
+                                <a href={`/tweets/user/${tweet.username}`}>{tweet.username}</a><br/>
+                                <a href={`/tweets/${tweet._id}`}>
+                                    {tweet.content}<br/>
+                                    <img src={tweet.img}/><br/>
+                                </a>
+                            </div>
                         ))
                     }
                     <a href='/user/logout'><button>Logout</button></a>
