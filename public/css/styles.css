@@ -10,6 +10,10 @@ a {
 
 .nav{
     text-align: center;
+    position: sticky;
+    z-index: 100;
+    border: 1px solid var(--twitter-background);
+    padding: 15px 20px;
 }
 
 .nav ul {
@@ -24,13 +28,15 @@ a {
     text-align: center;
     padding: 0px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
+    font-weight: 800;
 
 }
 
 .nav a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: #00BFFF;
+    border-radius: 30px;
+    height: 25px;
 }
 
 .nav a.active {
@@ -50,4 +56,54 @@ a {
       left: 0;
       transform: none;
     }
-  }
+}
+
+/* feed */
+
+.feed{
+    flex: 0.5;
+    min-width: fit-content;
+}
+
+/* tweet */
+
+.tweet {
+    padding-bottom: 10px;
+    border-bottom: 8-x solid var(--twitter-background);
+    padding-right: 10px;
+}
+
+.tweet form {
+    display: flex;
+    flex-direction: column;
+}
+
+.tweetInput, .tweetImg{
+    display: flex;
+    padding: 20px;
+}
+
+.tweetInput input, .tweetImg input{
+    flex: 1;
+    margin-left: 20px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+
+.tweetBtn {
+    background-color: #00BFFF;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 900;
+    border-radius: 30px;
+    width: 120px;
+    height: 60px;
+    margin-top: 20px;
+    margin-left: auto;
+}
+
+.tweetBtn:hover {
+    background-color: #00bfffd5;
+}

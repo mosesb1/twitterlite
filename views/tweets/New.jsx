@@ -5,11 +5,15 @@ class New extends React.Component{
     render(){
         return(
             <Default>
-                <form action='/tweets' method="POST">
-                    <textarea name='content' placeholder="What's happening?"/><br/>
-                    <input type='text' name='img' placeholder='Image URL'/><br/>
-                    <input type='submit' value='Tweet'/>
-                </form>
+                <div className='feed'>
+                    <div className='tweet'>
+                        <form action='/tweets' method="POST">
+                            <textarea className='tweetInput' name='content' placeholder="What's happening?"/><br/>
+                            <input className='tweetImg' type='text' name='img' placeholder='Image URL'/><br/>
+                            <input className='tweetBtn' type='submit' value='Tweet'/>
+                        </form>
+                    </div>
+                </div>
             </Default>
         )
     }
