@@ -1,6 +1,4 @@
 const React = require('react');
-const Tweet = require('../../models/tweet');
-const mongoose = require('mongoose');
 const Default = require('../layouts/Default');
 
 class Show extends React.Component{
