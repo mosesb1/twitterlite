@@ -4,7 +4,7 @@ class Index extends React.Component{
     render(){
         const {tweets, username} = this.props;
         return(
-            <Default>
+            <Default user={username}>
                 <div>
                     <nav>
                         <a href='/tweets/new'>Create a tweet</a>
@@ -20,7 +20,6 @@ class Index extends React.Component{
                             </div>
                         ))
                     }
-                    <a href='/user/logout'><button>Logout</button></a>
                 </div>
             </Default>
         )

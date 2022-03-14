@@ -21,7 +21,6 @@ class Show extends React.Component{
                     <form action={`${user}?_method=PATCH`} method="POST">
                         <input type='submit' value={followers.includes(username) ? `Unfollow` : `Follow`}/>
                     </form>
-                    <a href='/user/logout'><button>Logout</button></a>
                 </div>
             </Default>
         )

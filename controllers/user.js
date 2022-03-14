@@ -90,7 +90,7 @@ router.get('/:user', async (req,res) => {
         })
 })
 
-router.get('/logout', (req,res) => {
+router.get('/session/logout', (req,res) => {
     req.session.destroy((err) => {
         res.redirect('/');
     })

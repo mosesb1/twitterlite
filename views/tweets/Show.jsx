@@ -5,13 +5,12 @@ class Show extends React.Component{
     render(){
         const {tweet, username} = this.props;
 
-        const helloWorld = () => {
-            console.log('hello world');
-        }
-
         return(
             <Default>
                 <div>
+                    <nav>
+                        <a href='/tweets/new'>Create a tweet</a>
+                    </nav>
                     {tweet.username === username ? 
                     <div>
                         <p>{tweet.content}</p>
@@ -24,6 +23,7 @@ class Show extends React.Component{
                     <div>
                         <a href={`/user/${tweet.username}`}>{tweet.username}</a>
                         <p>{tweet.content}</p>
+                        <img src={tweet.img}/><br/>
                         <form action={`${tweet._id}?_method=PATCH`} method="POST">
                             <input type='submit' value={tweet.likes.includes(username) ? `Unlike` : `Like`}/>
                         </form>
