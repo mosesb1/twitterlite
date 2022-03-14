@@ -1,4 +1,5 @@
 const express = require('express');
+const Tweet = require('../models/tweet');
 const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 
@@ -7,6 +8,8 @@ const router = express.Router();
 router.get('/signup', (req,res) => {
     res.render("user/Signup");
 });
+
+router.use(express.static('public'));
 
 router.post("/signup", async (req,res) => {
     req.body.password = await bcrypt.hash(
@@ -52,6 +55,17 @@ router.post("/login", (req,res) => {
             res.json({error});
         })
 });
+
+router.get('/:user', (req,res) => {
+    Tweet.find({username: req.params.user})
+        .then((foundTweets) => {
+            res.render('user/Show', {tweets: foundTweets, username: req.session.username});
+        })
+        .catch((error) => {
+            console.log(error);
+            res.json({error});
+        })
+})
 
 router.get('/logout', (req,res) => {
     req.session.destroy((err) => {

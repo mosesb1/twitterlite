@@ -69,7 +69,7 @@ router.get('/liked', (req,res) => {
 router.get('/user/:user', (req,res) => {
     Tweet.find({username: req.params.user})
         .then((foundTweets) => {
-            res.render('tweets/Index', {tweets: foundTweets, username: req.session.username});
+            res.render('user/Index', {tweets: foundTweets, username: req.session.username});
         })
         .catch((error) => {
             console.log(error);
@@ -107,6 +107,24 @@ router.put('/:id', (req,res) => {
             console.log(error);
             res.json({error});
         })
+})
+
+router.patch('/:id', async (req,res) => {
+    try {
+        const tweet = await Tweet.findOne({_id: req.params.id});
+
+        if(tweet.likes.includes(req.session.username)){
+            tweet.likes.splice(tweet.likes.indexOf(req.session.username));
+        } else {
+            tweet.likes.push(req.session.username);
+        }
+
+        await tweet.save();
+        res.redirect('/tweets/liked');
+    }
+    catch {
+        res.status(400).send({error: "post doesnt exist!"})
+    }
 })
 
 // create
