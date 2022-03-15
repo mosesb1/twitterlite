@@ -5,7 +5,7 @@ class New extends React.Component{
     render(){
         return(
             <Default>
-                <div className='feed'>
+                <div className='creation'>
                     <div className='tweet'>
                         <form action='/tweets' method="POST">
                             <textarea className='tweetInput' name='content' placeholder="What's happening?"/><br/>

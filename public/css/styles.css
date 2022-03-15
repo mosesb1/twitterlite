@@ -58,9 +58,9 @@ a {
     }
 }
 
-/* feed */
+/* tweet creation */
 
-.feed{
+.creation{
     flex: 0.5;
     min-width: fit-content;
 }
@@ -106,4 +106,66 @@ a {
 
 .tweetBtn:hover {
     background-color: #00bfffd5;
+}
+
+.post{
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid #A0A0A0;
+    padding-bottom: 10px;
+    min-width: 600px;
+}
+
+.postBody img{
+    width: 600px;
+    object-fit: contain;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+
+.postAuthor h3{
+    font-size: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.postContent {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.postBody {
+    flex: 1;
+    padding: 10px;
+}
+
+.tweets {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.followBtn, .unfollowBtn, .likeBtn, .unlikeBtn, .deleteBtn, .editBtn {
+    border-radius: 20px;
+    width: 120px;
+    height: 60px;
+}
+
+.unfollowBtn, .unlikeBtn, .deleteBtn{
+    background-color: #101010;
+    color: white;
+    border: 1px solid white;
+}
+
+.followBtn:hover, .likeBtn:hover, .editBtn:hover {
+    background-color: #E0E0E0;
+}
+
+.unfollowBtn:hover, .unlikeBtn:hover, .deleteBtn:hover {
+    color: red;
+    border: 1px solid red;
+}
+
+.routeBtns {
+    display: flex;
 }

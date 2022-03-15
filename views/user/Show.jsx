@@ -7,19 +7,23 @@ class Show extends React.Component{
         return(
             <Default>
                 <div>
-                    <a href={`/tweets/user/${user}`}>{user}</a><br/>
                     {
                         tweets.map((tweet) => (
-                            <div>
-                                <a href={`/tweets/${tweet._id}`}>
-                                    {tweet.content}<br/>
-                                    <img src={tweet.img}/><br/>
-                                </a>
+                            <div className='post'>
+                                <div className='postBody'>
+                                    <a className='postAuthor' href={`/tweets/user/${user}`}><h3>{user}</h3></a><br/>
+                                    <div className='postContent'>
+                                        <a href={`/tweets/${tweet._id}`}>
+                                            {tweet.content}<br/>
+                                            <img src={tweet.img}/><br/>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         ))
                     }
-                    <form action={`${user}?_method=PATCH`} method="POST">
-                        <input type='submit' value={followers.includes(username) ? `Unfollow` : `Follow`}/>
+                    <form className='followForm' action={`${user}?_method=PATCH`} method="POST">
+                        <input className={followers.includes(username) ? 'unfollowBtn' : 'followBtn'} type='submit' value={followers.includes(username) ? `Unfollow` : `Follow`}/>
                     </form>
                 </div>
             </Default>

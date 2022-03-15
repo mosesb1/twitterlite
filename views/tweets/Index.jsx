@@ -5,18 +5,17 @@ class Index extends React.Component{
         const {tweets, username} = this.props;
         return(
             <Default user={username}>
-                <div className='feed'>
-                    <nav>
-                        <a href='/tweets/new'>Create a tweet</a>
-                    </nav>
+                <div>
                     {
                         tweets.map((tweet) => (
-                            <div className='tweet'>
-                                <a href={`/user/${tweet.username}`}>{tweet.username}</a><br/>
-                                <a href={`/tweets/${tweet._id}`}>
-                                    {tweet.content}<br/>
-                                    <img src={tweet.img}/><br/>
-                                </a>
+                            <div className='post'>
+                                <div className='postBody'>
+                                    <a className='postAuthor' href={`/user/${tweet.username}`}><h3>{tweet.username}</h3></a><br/>
+                                    <a className='postContent' href={`/tweets/${tweet._id}`}>
+                                        {tweet.content}<br/>
+                                        <img src={tweet.img}/><br/>
+                                    </a>
+                                </div>
                             </div>
                         ))
                     }
