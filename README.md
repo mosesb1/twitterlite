@@ -13,8 +13,23 @@ A twitter-inspired CRUD app.
 ## Getting Started with the App
 The app is a very bare version of twitter. Post tweets with text/image content. You can like other tweets or follow other users to have easier access to those tweets. To get started, simply create an account and then login with your username and password (it isn't secure so don't use a real password).
 
+To like a tweet, simply click on the tweet and then click like (or unlike). Similarly, to follow a user, click on their name and then click follow (or unfollow).
+
 
 ## Screenshots
+
+### Landing
+![Landing page](./public/Screenshots/Screen Shot 2022-03-14 at 10.18.25 PM.png?raw=true "Landing Page")
+### Login
+### Index
+
+### New
+
+### Edit
+
+### Show for tweets
+
+### Show for users
 
 ## ERD
 https://lucid.app/lucidchart/9e7989a3-7b8c-4728-9ffe-163ea1a3a8b6/edit?invitationId=inv_806811e9-485b-463e-9f58-06c7c4ce4c1f
