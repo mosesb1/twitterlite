@@ -32,7 +32,10 @@ To like a tweet, simply click on the tweet and then click like (or unlike). Simi
 ![Edit](./public/Screenshots/edit.png)
 
 ### Show for tweets
+My tweets
 ![My Show](./public/Screenshots/showmytweet.png)
+
+Others' tweets
 ![Show Tweet](./public/Screenshots/showtweet.png)
 
 ### Show for users
