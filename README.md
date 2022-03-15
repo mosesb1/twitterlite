@@ -19,17 +19,24 @@ To like a tweet, simply click on the tweet and then click like (or unlike). Simi
 ## Screenshots
 
 ### Landing
-![Landing page](./public/Screenshots/Screen Shot 2022-03-14 at 10.18.25 PM.png?raw=true "Landing Page")
+![Landing page](./public/Screenshots/landing.png)
 ### Login
+![Login page](./public/Screenshots/login.png)
 ### Index
-
+![My Index](./public/Screenshots/index.png)
+![All Index](./public/Screenshots/index2.png)
 ### New
+![New](./public/Screenshots/new.png)
 
 ### Edit
+![Edit](./public/Screenshots/edit.png)
 
 ### Show for tweets
+![My Show](./public/Screenshots/showmytweet.png)
+![Show Tweet](./public/Screenshots/showtweet.png)
 
 ### Show for users
+![Show User](./public/Screenshots/showuser.png)
 
 ## ERD
 https://lucid.app/lucidchart/9e7989a3-7b8c-4728-9ffe-163ea1a3a8b6/edit?invitationId=inv_806811e9-485b-463e-9f58-06c7c4ce4c1f
