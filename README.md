@@ -15,6 +15,8 @@ The app is a very bare version of twitter. Post tweets with text/image content. 
 
 To like a tweet, simply click on the tweet and then click like (or unlike). Similarly, to follow a user, click on their name and then click follow (or unfollow).
 
+## Link to the App
+https://moses-twitter-lite.herokuapp.com/
 
 ## Screenshots
 
@@ -49,6 +51,3 @@ https://lucid.app/lucidchart/9e7989a3-7b8c-4728-9ffe-163ea1a3a8b6/edit?invitatio
 - Landing Page: https://lucid.app/lucidchart/245612c4-58b9-4c7f-8ae7-9e34411ca627/edit?invitationId=inv_f4f30582-65d9-4f75-8af8-f2f5f4573996
 - Show/Update: https://lucid.app/lucidchart/07c58fe2-9e6f-4d65-8743-2376edea0f66/edit?invitationId=inv_e8361f5a-c7d1-4b39-a861-d78b924b2d73
 - New/Edit: https://lucid.app/lucidchart/b1b759bf-0038-490b-b4aa-4601f68210d3/edit?invitationId=inv_be25c5da-2d23-4b30-8484-748ed0d48d86
-
-## Link to the App
-https://moses-twitter-lite.herokuapp.com/
