@@ -8,19 +8,22 @@ a {
     color: white;
 }
 
-.nav{
+.navbar{
+    background-color: #101010;
     text-align: center;
     position: sticky;
+    top: 0;
     z-index: 100;
     padding: 15px 20px;
+    overflow: hidden;
 }
 
-.nav ul {
+.navbar ul {
     display: inline-block;
     list-style-type: none;
 }
 
-.nav a {
+.navbar a {
     text-align: center;
     float: left;
     color: #f2f2f2;
@@ -32,24 +35,24 @@ a {
 
 }
 
-.nav a:hover {
+.navbar a:hover {
     background-color: #00BFFF;
     border-radius: 30px;
     height: 25px;
 }
 
-.nav a.active {
+.navbar a.active {
     background-color: #04AA6D;
     color: white;
 }
 
 @media screen and (max-width: 600px) {
-    .nav a{
+    .navbar a{
       float: none;
       display: block;
     }
   
-    .nav a {
+    .navbar a {
       position: relative;
       top: 0;
       left: 0;
@@ -188,6 +191,10 @@ a {
     font-weight: 800;
     font-size: 20px;
     border: 1px solid grey;
+}
+
+.loginBtns button:hover {
+    background-color: #303030;
 }
 
 fieldset {

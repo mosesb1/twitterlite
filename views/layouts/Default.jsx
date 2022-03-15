@@ -12,7 +12,7 @@ class Default extends React.Component{
                     <title>Twitter App</title>
                 </head>
                 <body>
-                    <nav className='nav'>
+                    <nav className='navbar'>
                         <ul>
                             <a href='/tweets/home'>Home</a>
                             <a href='/tweets/mytweets'>My Tweets</a>
