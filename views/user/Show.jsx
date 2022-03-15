@@ -1,6 +1,5 @@
 const React = require('react');
 const Default = require('../layouts/Default');
-const User = require('../../models/user');
 class Show extends React.Component{
     render(){
         const {tweets, user, followers, username} = this.props;
