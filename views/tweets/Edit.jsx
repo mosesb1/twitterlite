@@ -6,11 +6,15 @@ class Edit extends React.Component{
         const {tweet} = this.props;
         return(
             <Default>
-                <form action={`/tweets/${tweet._id}/?_method=PUT`} method="POST">
-                    <textarea name='content' defaultValue={tweet.content} placeholder="What's happening?"/><br/>
-                    <input type='text' name='img' defaultValue={tweet.img} placeholder='Image URL'/><br/>
-                    <input type='submit' value='Update tweet'/>
-                </form>
+                <div className='creation'>
+                    <div className='tweet'>
+                        <form action={`/tweets/${tweet._id}/?_method=PUT`} method="POST">
+                            <textarea className='tweetInput' name='content' defaultValue={tweet.content} placeholder="What's happening?"/><br/>
+                            <input className='tweetImg' type='text' name='img' defaultValue={tweet.img} placeholder='Image URL'/><br/>
+                            <input className='tweetBtn' type='submit' value='Update'/>
+                        </form>
+                    </div>
+                </div>
             </Default>
         )
     }

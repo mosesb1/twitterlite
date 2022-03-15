@@ -1,16 +1,20 @@
 const React = require('react');
-const Default = require('../layouts/Default');
+const Default = require('../layouts/DefaultLogin');
 
 class Login extends React.Component{
     render(){
         return(
             <Default>
-                <div>
-                    <form action='/user/login' method="POST">
-                        <fieldset>
-                            <legend>User Login</legend>
-                            <label>USERNAME: <input type='text' name='username' required/></label>
-                            <label>PASSWORD: <input type='password' name='password' required/></label>
+                <div className='signup'>
+                    <form action="/user/login" method="POST">
+                        <fieldset className='signup-form'>
+                            <div className="cont">
+                                <div className="sign-in">
+                                    <h2>Login</h2>
+                                    <input type="username" name='username' placeholder='username' required/>
+                                    <input type="password" name='password' placeholder='password' required/>
+                                </div>
+                            </div>
                             <input type='submit' value='Login'/>
                         </fieldset>
                     </form>

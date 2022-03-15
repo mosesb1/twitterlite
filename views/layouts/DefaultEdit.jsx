@@ -13,12 +13,18 @@ class Default extends React.Component{
                 </head>
                 <body>
                     <nav className='nav'>
-                        <a href='/tweets/home'>Home</a>
-                        <a href='/tweets/mytweets'>My Tweets</a>
-                        <a href='/tweets/liked'>Liked Tweets</a>
-                        <a href='/tweets'>All Tweets</a>
+                        <ul>
+                            <a href='/tweets/home'>Home</a>
+                            <a href='/tweets/mytweets'>My Tweets</a>
+                            <a href='/tweets/liked'>Liked Tweets</a>
+                            <a href='/tweets'>All Tweets</a>
+                            <a href='/tweets/new'>Create Tweet</a>
+                            <a href='/user/session/logout'>Logout</a>
+                        </ul>
                     </nav>
-                    {this.props.children}
+                    <div className='tweets'>
+                        {this.props.children}
+                    </div>
                 </body>
             </html>
         )
