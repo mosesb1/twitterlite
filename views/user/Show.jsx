@@ -10,7 +10,7 @@ class Show extends React.Component{
                         tweets.map((tweet) => (
                             <div className='post'>
                                 <div className='postBody'>
-                                    <a className='postAuthor' href={`/tweets/user/${user}`}><h3>{user}</h3></a><br/>
+                                    <a className='postAuthor' href={`/user/${user}`}><h3>{user}</h3></a><br/>
                                     <div className='postContent'>
                                         <a href={`/tweets/${tweet._id}`}>
                                             {tweet.content}<br/>
